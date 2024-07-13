@@ -1,4 +1,4 @@
-# Twitch API with Go
+# Twitch API with Go 🐹
 
 Go to my Twitch at MajesticCodingTwitch! This Go site uses templates with the Twitch API.
 
