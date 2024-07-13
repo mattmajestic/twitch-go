@@ -1,0 +1,7 @@
+
+services:
+  majesticcodingtwitch:
+    build:
+      context: .
+    ports:
+      - "8080:8080"

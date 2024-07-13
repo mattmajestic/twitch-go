@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: majesticcodingtwitch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: majesticcodingtwitch
+  template:
+    metadata:
+      labels:
+        app: majesticcodingtwitch
+    spec:
+      containers:
+      - name: majesticcodingtwitch
+        image: mattmajestic/majesticcodingtwitch:latest
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: majesticcodingtwitch-service
+spec:
+  selector:
+    app: majesticcodingtwitch
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
