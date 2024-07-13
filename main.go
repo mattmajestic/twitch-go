@@ -37,9 +37,21 @@ type UsersResponse struct {
 }
 
 func loadEnv() {
-	err := godotenv.Load(".env")
-	if err != nil {
-		log.Fatal("Error loading .env file")
+	// Check if required environment variables are already set
+	requiredVars := []string{"TWITCH_CLIENT_ID", "TWITCH_CLIENT_SECRET", "TWITCH_USERNAME"}
+	var missingVars []string
+	for _, envVar := range requiredVars {
+		if os.Getenv(envVar) == "" {
+			missingVars = append(missingVars, envVar)
+		}
+	}
+
+	// Load .env file if any required environment variables are missing
+	if len(missingVars) > 0 {
+		err := godotenv.Load(".env")
+		if err != nil {
+			log.Printf("Error loading .env file: %v", err)
+		}
 	}
 }
 
@@ -136,6 +148,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", handler)
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	fmt.Println("Starting server at :8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
