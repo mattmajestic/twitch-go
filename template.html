@@ -4,21 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitch API in Go</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/glitch_flat_purple.svg" type="image/svg+xml">
 </head>
 <body>
     <div class="container">
-        <h1>Twitch API in Go</h1>
-        <p><strong>ID:</strong> {{.ID}}</p>
-        <p><strong>Login:</strong> {{.Login}}</p>
-        <p><strong>Display Name:</strong> {{.DisplayName}}</p>
-        <p><strong>Type:</strong> {{.Type}}</p>
-        <p><strong>Broadcaster Type:</strong> {{.BroadcasterType}}</p>
-        <p><strong>Description:</strong> {{.Description}}</p>
-        <p><strong>Profile Image URL:</strong> <img src="{{.ProfileImageURL}}" alt="Profile Image"></p>
-        <p><strong>Offline Image URL:</strong> <img src="{{.OfflineImageURL}}" alt="Offline Image"></p>
-        <p><strong>View Count:</strong> {{.ViewCount}}</p>
-        <p><strong>Email:</strong> {{.Email}}</p>
+        <header>
+            <img src="/static/glitch_flat_purple.svg" alt="Twitch Logo" class="logo">
+            <h1>Twitch Profile Dashboard</h1>
+        </header>
+        <div class="profile">
+            <div class="profile-img">
+                <img src="{{.ProfileImageURL}}" alt="Profile Image">
+            </div>
+            <div class="profile-info">
+                <p><strong>ID:</strong> {{.ID}}</p>
+                <p><strong>Login:</strong> {{.Login}}</p>
+                <p><strong>Display Name:</strong> {{.DisplayName}}</p>
+                <p><strong>Description:</strong> {{.Description}}</p>
+            </div>
+        </div>
+        <div class="offline-img">
+            <h2>Offline Image</h2>
+            <img src="{{.OfflineImageURL}}" alt="Offline Image">
+        </div>
+        <footer>
+            <h2>Follow Me on Socials</h2>
+            <div class="social-banners">
+                <a href="https://www.youtube.com/yourchannel" target="_blank">
+                    <img src="/static/yt-banner.png" alt="YouTube Banner">
+                </a>
+                <a href="https://www.twitch.tv/yourchannel" target="_blank">
+                    <img src="/static/twitch-banner.png" alt="Twitch Banner">
+                </a>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

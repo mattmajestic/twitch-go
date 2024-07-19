@@ -1,35 +1,108 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #2d0b5b; /* Darker purple background */
+    color: #ffffff; /* White text */
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 .container {
-    background: #fff;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #3c1e70; /* Slightly lighter purple for the container */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-    text-align: center;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #9147ff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 50px;
+    margin-right: 20px;
 }
 
 h1 {
-    text-align: center;
-    color: #6441a5;
+    color: #ffffff;
 }
 
-p {
-    font-size: 1.1em;
+.profile {
+    display: flex;
+    align-items: flex-start;
 }
 
-img {
-    max-width: 100%;
+.profile-img img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 3px solid #9147ff;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.profile-info p strong {
+    color: #9147ff;
+}
+
+.offline-img {
+    margin-top: 20px;
+}
+
+.offline-img h2 {
+    color: #ffffff;
+}
+
+.offline-img img {
+    width: 100%;
+    max-width: 300px; /* Limit the width of the offline image */
+    height: auto;
     border-radius: 8px;
+    border: 3px solid #9147ff;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+}
+
+footer h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.social-banners {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-banners img {
+    width: 250px; /* Increase the size of the banners */
+    height: auto;
+    border-radius: 12px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+.social-banners img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
 }
