@@ -15,6 +15,9 @@ spec:
       containers:
       - name: majesticcodingtwitch
         image: mattmajestic/majesticcodingtwitch:latest
+        envFrom:
+        - configMapRef:
+            name: majesticcodingtwitch-env
         ports:
         - containerPort: 8080
 ---

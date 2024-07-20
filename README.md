@@ -10,7 +10,9 @@ Go to my Twitch at MajesticCodingTwitch! This Go site uses templates with the Tw
 
 ## Run with Kubernetes 📦
 ```
+kubectl create configmap majesticcodingtwitch-env --from-env-file=.env
 kubectl apply -f k8s-go.yaml
+kubectl expose deployment majesticcodingtwitch --type=LoadBalancer --name=majesticcodingtwitch --port=8080 --target-port=8080
 ```
 
 ## Run with Docker 🐳
@@ -20,5 +22,6 @@ docker compose up
 
 ## Run with Go 🐹
 ```
+go mod tidy
 go run main.go
 ```

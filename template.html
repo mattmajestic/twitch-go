@@ -19,16 +19,17 @@
                 <img src="{{.ProfileImageURL}}" alt="Profile Image">
             </div>
             <div class="profile-info">
+            <h3>Twitch User API Data</h3>
                 <p><strong>ID:</strong> {{.ID}}</p>
                 <p><strong>Login:</strong> {{.Login}}</p>
                 <p><strong>Display Name:</strong> {{.DisplayName}}</p>
                 <p><strong>Description:</strong> {{.Description}}</p>
             </div>
+            <div class="offline-img">
+                <img src="{{.OfflineImageURL}}" alt="Offline Image">
+            </div>
         </div>
-        <div class="offline-img">
-            <h2>Offline Image</h2>
-            <img src="{{.OfflineImageURL}}" alt="Offline Image">
-        </div>
+        
         <footer>
             <h2>Follow Me on Socials</h2>
             <div class="social-banners">
