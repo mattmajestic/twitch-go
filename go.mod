@@ -1,4 +1,4 @@
-module twitch_api
+module mattmajestic/twitch-go
 
 go 1.18
 
